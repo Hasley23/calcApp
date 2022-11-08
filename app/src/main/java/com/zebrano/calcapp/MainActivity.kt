@@ -2,40 +2,46 @@ package com.zebrano.calcapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.util.Log
+import android.widget.TextView
 import com.zebrano.calcapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding
-    val maxPerson = 90
-    var currentPerson = 45
-    var res = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        bindingClass.button.setOnClickListener{
-            bindingClass.tvRes.text = if (maxPerson > currentPerson)
-                "Всё в порядке!" else "Превышение!"
+        // Только числа
+        bindingClass.edValue.inputType = InputType.TYPE_CLASS_NUMBER
+        // начальное число
+        bindingClass.edValue.setText("100")
 
-        }
-        var abda = 0
-        bindingClass.button2.setOnClickListener{
-            when(currentPerson){
-                //45 -> bindingClass.tvRes.text = "Ровно половина!"
-                //89 -> bindingClass.tvRes.text = "Почти полный зал!"
-                in 0..maxPerson -> bindingClass.tvRes.text = "Всё в порядке!"
-                else -> abda = 5
+        // Button listener
+        bindingClass.button.setOnClickListener{
+            if (bindingClass.edValue.text.toString() == String()) {
+                return@setOnClickListener
             }
+            bindingClass.tvResult.visibility = TextView.VISIBLE
+            val num = bindingClass.edValue.text.toString().toInt()
+            bindingClass.tvResult.text = when(num) {
+                in 0..10 -> "So bad..."
+                in 11..20 -> "Not so good"
+                in 21..30 -> "aww..."
+                in 31..40 -> "just try already"
+                in 41..50 -> "Medium"
+                in 51..60 -> "Medium well"
+                in 61..70 -> "Good"
+                in 71..80 -> "So good"
+                in 81..90 -> "So fuckin good"
+                in 91..100 -> "Excellent!"
+                else -> "The app doesn't know..."
+            }
+            Log.d("AppLog","Button pushed! num = $num")
         }
-        bindingClass.button3.setOnClickListener{
-            bindingClass.tvRes.text = "Это ни к чему не привело"
-        }
-    }
-    fun viewRes(){
-        val str = ": $res"
-        if (res != 0)
-            bindingClass.tvRes.text = str
+
     }
 }
