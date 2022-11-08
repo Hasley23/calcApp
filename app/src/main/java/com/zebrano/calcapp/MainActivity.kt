@@ -16,9 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
 
         // Только числа
-        bindingClass.edValue.inputType = InputType.TYPE_CLASS_NUMBER
-        // начальное число
-        bindingClass.edValue.setText("100")
+        bindingClass.edValue.inputType = InputType.TYPE_CLASS_TEXT
 
         // Button listener
         bindingClass.button.setOnClickListener{
@@ -26,21 +24,16 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             bindingClass.tvResult.visibility = TextView.VISIBLE
-            val num = bindingClass.edValue.text.toString().toInt()
+            val num = bindingClass.edValue.text.toString()
             bindingClass.tvResult.text = when(num) {
-                in 0..10 -> "So bad..."
-                in 11..20 -> "Not so good"
-                in 21..30 -> "aww..."
-                in 31..40 -> "just try already"
-                in 41..50 -> "Medium"
-                in 51..60 -> "Medium well"
-                in 61..70 -> "Good"
-                in 71..80 -> "So good"
-                in 81..90 -> "So fuckin good"
-                in 91..100 -> "Excellent!"
-                else -> "The app doesn't know..."
+                "Никита" -> "Уважаемый Никита, примите вашу зарплату в 1 000 рублей!"
+                "Гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в 10 000 рублей!"
+                "Павел" -> "Уважаемый Павел, примите вашу зарплату в 10 000 рублей!"
+                "Владимир" -> "Уважаемый Владимир, примите вашу зарплату в 16 000 рублей!"
+                "Александр" -> "Уважаемый Александр, примите вашу зарплату в 5 000 рублей!"
+                else -> "Имя не зарегистрировано!"
             }
-            Log.d("AppLog","Button pushed! num = $num")
+            Log.d("AppLog","Button pushed! Имя: $num")
         }
 
     }
