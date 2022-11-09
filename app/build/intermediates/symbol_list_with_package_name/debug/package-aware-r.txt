@@ -2568,6 +2568,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable jack
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2636,9 +2637,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable petr
+drawable seb
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable unknown
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3104,6 +3108,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userIcon
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3362,6 +3367,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string def_value
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description

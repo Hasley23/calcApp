@@ -12,16 +12,24 @@
         "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_petr.png.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\drawable\\petr.png"
+    },
+    {
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_jack.png.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\drawable\\jack.png"
+    },
+    {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_maze.png.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\drawable\\maze.png"
     },
     {
-        "merged": "com.zebrano.calcapp-merged_res-29:/layout_activity_main.xml.flat",
-        "source": "com.zebrano.calcapp-main-31:/layout/activity_main.xml"
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -38,6 +46,10 @@
     {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_seb.png.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\drawable\\seb.png"
     },
     {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_ic_launcher_background.xml.flat",
@@ -58,6 +70,14 @@
     {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\drawable_unknown.png.flat",
+        "source": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-main-31:\\drawable\\unknown.png"
+    },
+    {
+        "merged": "com.zebrano.calcapp-merged_res-29:/drawable_unknown.png.flat",
+        "source": "com.zebrano.calcapp-main-31:/drawable/unknown.png"
     },
     {
         "merged": "C:\\Users\\valer\\.gradle\\daemon\\7.4\\com.zebrano.calcapp-merged_res-29:\\xml_backup_rules.xml.flat",

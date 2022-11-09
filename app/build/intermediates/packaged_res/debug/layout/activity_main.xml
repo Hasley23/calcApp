@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
 
     <EditText
         android:id="@+id/edValue"
@@ -83,4 +84,15 @@
         app:layout_constraintEnd_toEndOf="@+id/edValue"
         app:layout_constraintStart_toStartOf="@+id/edValue"
         app:layout_constraintTop_toBottomOf="@+id/edValue" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/unknown" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

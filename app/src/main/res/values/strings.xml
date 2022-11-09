@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">calcApp</string>
+    <string name="def_value">123</string>
 </resources>

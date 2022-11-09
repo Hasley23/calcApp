@@ -9,6 +9,10 @@ color teal_700
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable jack
+drawable petr
+drawable seb
+drawable unknown
 id bRes
 id button
 id edCode
@@ -16,10 +20,12 @@ id edValue
 id textView
 id tvResult
 id tvText
+id userIcon
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string def_value
 style Theme.CalcApp
 xml backup_rules
 xml data_extraction_rules

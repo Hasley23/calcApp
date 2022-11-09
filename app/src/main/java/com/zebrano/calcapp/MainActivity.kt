@@ -1,10 +1,15 @@
 package com.zebrano.calcapp
 
+import android.app.UiModeManager.MODE_NIGHT_NO
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.NightMode
 import com.zebrano.calcapp.databinding.ActivityMainBinding
 import java.lang.Math.random
 import java.util.*
@@ -17,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+
+        // Выключаем темную тему
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         // Только числа
         bindingClass.edValue.inputType = InputType.TYPE_CLASS_TEXT
@@ -34,25 +42,32 @@ class MainActivity : AppCompatActivity() {
 
             val nameLower = name.lowercase(Locale.ROOT)
 
-            val sal = when(nameLower) {
-                "" -> "Поле имени не заполнено!"
+            val sal : String
+            when(nameLower) {
+                "" -> {
+                    sal = "Введите имя!"
+                }
                 Consts.WORKER -> {
                     if (code == Consts.WORKER_PASS){
-                        "Уважаемый ${name}, примите ваши ${Consts.WORKER_SALARY} условных единиц."
-                    } else "Пароль введен неверно!"
+                        bindingClass.userIcon.setImageResource(R.drawable.jack)
+                        sal = "Уважаемый ${name}, примите ваши ${Consts.WORKER_SALARY} условных единиц."
+                    } else sal = "Пароль введен неверно!"
                 }
                 Consts.DIRECTOR -> {
-                    if (code == Consts.DIRECTOR_PASS){
-                        "Уважаемый ${name}, примите ваши ${Consts.DIRECTOR_SALARY} условных единиц."
-                    } else "Пароль введен неверно!"
+                    if(code == Consts.DIRECTOR_PASS) {
+                        bindingClass.userIcon.setImageResource(R.drawable.seb)
+                        sal = "Уважаемый ${name}, примите ваши ${Consts.DIRECTOR_SALARY} условных единиц."
+                    } else sal = "Пароль введен неверно!"
                 }
                 Consts.ENGINEER -> {
-                    if (code == Consts.ENGINEER_PASS){
-                        "Уважаемый ${name}, примите ваши ${Consts.ENGINEER_SALARY} условных единиц."
-                    } else "Пароль введен неверно!"
+                    if(code == Consts.ENGINEER_PASS) {
+                        bindingClass.userIcon.setImageResource(R.drawable.petr)
+                        sal = "Уважаемый ${name}, примите ваши ${Consts.ENGINEER_SALARY} условных единиц."
+                    } else sal = "Пароль введен неверно!"
                 }
                 else -> {
-                    "Имя не распознано"
+                    bindingClass.userIcon.setImageResource(R.drawable.unknown)
+                    sal = "Имя не распознано!"
                 }
             }
             bindingClass.tvResult.text = sal

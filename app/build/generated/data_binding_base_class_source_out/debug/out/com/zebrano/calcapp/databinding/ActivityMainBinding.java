@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,9 +43,13 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvText;
 
+  @NonNull
+  public final ImageView userIcon;
+
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout bRes,
       @NonNull Button button, @NonNull EditText edCode, @NonNull EditText edValue,
-      @NonNull TextView textView, @NonNull TextView tvResult, @NonNull TextView tvText) {
+      @NonNull TextView textView, @NonNull TextView tvResult, @NonNull TextView tvText,
+      @NonNull ImageView userIcon) {
     this.rootView = rootView;
     this.bRes = bRes;
     this.button = button;
@@ -53,6 +58,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.textView = textView;
     this.tvResult = tvResult;
     this.tvText = tvText;
+    this.userIcon = userIcon;
   }
 
   @Override
@@ -120,8 +126,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.userIcon;
+      ImageView userIcon = ViewBindings.findChildViewById(rootView, id);
+      if (userIcon == null) {
+        break missingId;
+      }
+
       return new ActivityMainBinding((ConstraintLayout) rootView, bRes, button, edCode, edValue,
-          textView, tvResult, tvText);
+          textView, tvResult, tvText, userIcon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
