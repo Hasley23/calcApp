@@ -1,10 +1,19 @@
 package com.zebrano.calcapp
 
 object Consts {
-    const val VALERY_SALARY = 25000
-    const val NIKITA_SALARY = 20000
-    const val GOBLIN_SALARY = 10000
-    const val PAVEL_SALARY = 15000
-    const val VLADIMIR_SALARY = 18000
-    const val ALEX_SALARY = 5000
+    // Amounts
+    const val WORKER_SALARY = 10000
+    const val DIRECTOR_SALARY = 100000
+    const val ENGINEER_SALARY = 20000
+
+    // Names
+    const val WORKER = "петр"
+    const val DIRECTOR = "василий"
+    const val ENGINEER = "николай"
+
+    // passes
+    const val WORKER_PASS = "123"
+    const val DIRECTOR_PASS = "456"
+    const val ENGINEER_PASS = "789"
+
 }

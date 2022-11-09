@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.TextView
 import com.zebrano.calcapp.databinding.ActivityMainBinding
 import java.lang.Math.random
+import java.util.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         // Только числа
         bindingClass.edValue.inputType = InputType.TYPE_CLASS_TEXT
+        bindingClass.edCode.inputType = InputType.TYPE_CLASS_NUMBER
 
         // Button listener
         bindingClass.button.setOnClickListener{
@@ -27,15 +29,31 @@ class MainActivity : AppCompatActivity() {
             }
             bindingClass.tvResult.visibility = TextView.VISIBLE
             val name = bindingClass.edValue.text.toString()
-            val lcName = name.lowercase()
-            val sal = when(lcName) {
-                "никита" -> "Уважаемый Никита, примите вашу зарплату в ${Consts.NIKITA_SALARY} рублей!"
-                "гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в ${Consts.GOBLIN_SALARY} рублей!"
-                "павел" -> "Уважаемый Павел, примите вашу зарплату в ${Consts.PAVEL_SALARY} рублей!"
-                "владимир" -> "Уважаемый Владимир, примите вашу зарплату в ${Consts.VLADIMIR_SALARY} рублей!"
-                "александр" -> "Уважаемый Александр, примите вашу зарплату в ${Consts.ALEX_SALARY} рублей!"
-                "валерий" -> "Уважаемый Валерий, примите вашу зарплату в ${Consts.VALERY_SALARY} рублей!"
-                else -> "Имя не зарегистрировано!"
+            Log.d("AppLog", "name = $name")
+            val code = bindingClass.edCode.text.toString()
+
+            val nameLower = name.lowercase(Locale.ROOT)
+
+            val sal = when(nameLower) {
+                "" -> "Поле имени не заполнено!"
+                Consts.WORKER -> {
+                    if (code == Consts.WORKER_PASS){
+                        "Уважаемый ${name}, примите ваши ${Consts.WORKER_SALARY} условных единиц."
+                    } else "Пароль введен неверно!"
+                }
+                Consts.DIRECTOR -> {
+                    if (code == Consts.DIRECTOR_PASS){
+                        "Уважаемый ${name}, примите ваши ${Consts.DIRECTOR_SALARY} условных единиц."
+                    } else "Пароль введен неверно!"
+                }
+                Consts.ENGINEER -> {
+                    if (code == Consts.ENGINEER_PASS){
+                        "Уважаемый ${name}, примите ваши ${Consts.ENGINEER_SALARY} условных единиц."
+                    } else "Пароль введен неверно!"
+                }
+                else -> {
+                    "Имя не распознано"
+                }
             }
             bindingClass.tvResult.text = sal
             Log.d("AppLog","Button pushed! Имя: $name")

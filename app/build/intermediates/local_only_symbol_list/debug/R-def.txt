@@ -11,7 +11,9 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id bRes
 id button
+id edCode
 id edValue
+id textView
 id tvResult
 id tvText
 layout activity_main

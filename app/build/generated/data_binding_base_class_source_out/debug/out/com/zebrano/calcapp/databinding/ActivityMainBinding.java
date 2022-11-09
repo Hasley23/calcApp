@@ -28,7 +28,13 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button button;
 
   @NonNull
+  public final EditText edCode;
+
+  @NonNull
   public final EditText edValue;
+
+  @NonNull
+  public final TextView textView;
 
   @NonNull
   public final TextView tvResult;
@@ -37,12 +43,14 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView tvText;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout bRes,
-      @NonNull Button button, @NonNull EditText edValue, @NonNull TextView tvResult,
-      @NonNull TextView tvText) {
+      @NonNull Button button, @NonNull EditText edCode, @NonNull EditText edValue,
+      @NonNull TextView textView, @NonNull TextView tvResult, @NonNull TextView tvText) {
     this.rootView = rootView;
     this.bRes = bRes;
     this.button = button;
+    this.edCode = edCode;
     this.edValue = edValue;
+    this.textView = textView;
     this.tvResult = tvResult;
     this.tvText = tvText;
   }
@@ -82,9 +90,21 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edCode;
+      EditText edCode = ViewBindings.findChildViewById(rootView, id);
+      if (edCode == null) {
+        break missingId;
+      }
+
       id = R.id.edValue;
       EditText edValue = ViewBindings.findChildViewById(rootView, id);
       if (edValue == null) {
+        break missingId;
+      }
+
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
         break missingId;
       }
 
@@ -100,8 +120,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bRes, button, edValue, tvResult,
-          tvText);
+      return new ActivityMainBinding((ConstraintLayout) rootView, bRes, button, edCode, edValue,
+          textView, tvResult, tvText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
