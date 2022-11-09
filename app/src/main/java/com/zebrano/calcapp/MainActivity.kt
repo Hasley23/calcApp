@@ -6,6 +6,8 @@ import android.text.InputType
 import android.util.Log
 import android.widget.TextView
 import com.zebrano.calcapp.databinding.ActivityMainBinding
+import java.lang.Math.random
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding
@@ -24,17 +26,23 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             bindingClass.tvResult.visibility = TextView.VISIBLE
-            val num = bindingClass.edValue.text.toString()
-            bindingClass.tvResult.text = when(num) {
-                "Никита" -> "Уважаемый Никита, примите вашу зарплату в 1 000 рублей!"
-                "Гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в 10 000 рублей!"
-                "Павел" -> "Уважаемый Павел, примите вашу зарплату в 10 000 рублей!"
-                "Владимир" -> "Уважаемый Владимир, примите вашу зарплату в 16 000 рублей!"
-                "Александр" -> "Уважаемый Александр, примите вашу зарплату в 5 000 рублей!"
+            val name = bindingClass.edValue.text.toString()
+            val lcName = name.lowercase()
+            bindingClass.tvResult.text = when(lcName) {
+                "никита" -> "Уважаемый Никита, примите вашу зарплату в ${rand(5000,100000)} рублей!"
+                "гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в ${rand(10000,1000000)} рублей!"
+                "павел" -> "Уважаемый Павел, примите вашу зарплату в ${rand(100,1000)} рублей!"
+                "владимир" -> "Уважаемый Владимир, примите вашу зарплату в ${rand(3000,7000)} рублей!"
+                "александр" -> "Уважаемый Александр, примите вашу зарплату в ${rand(2000,10000)} рублей!"
                 else -> "Имя не зарегистрировано!"
             }
-            Log.d("AppLog","Button pushed! Имя: $num")
+            Log.d("AppLog","Button pushed! Имя: $name")
         }
 
+    }
+
+    fun rand(min : Int, max : Int): Int {
+        val salary = Random.nextInt((max-min)+min)
+        return salary
     }
 }
