@@ -28,14 +28,16 @@ class MainActivity : AppCompatActivity() {
             bindingClass.tvResult.visibility = TextView.VISIBLE
             val name = bindingClass.edValue.text.toString()
             val lcName = name.lowercase()
-            bindingClass.tvResult.text = when(lcName) {
-                "никита" -> "Уважаемый Никита, примите вашу зарплату в ${rand(5000,100000)} рублей!"
-                "гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в ${rand(10000,1000000)} рублей!"
-                "павел" -> "Уважаемый Павел, примите вашу зарплату в ${rand(100,1000)} рублей!"
-                "владимир" -> "Уважаемый Владимир, примите вашу зарплату в ${rand(3000,7000)} рублей!"
-                "александр" -> "Уважаемый Александр, примите вашу зарплату в ${rand(2000,10000)} рублей!"
+            val sal = when(lcName) {
+                "никита" -> "Уважаемый Никита, примите вашу зарплату в ${Consts.NIKITA_SALARY} рублей!"
+                "гоблин" -> "Уважаемый Гоблин, примите вашу зарплату в ${Consts.GOBLIN_SALARY} рублей!"
+                "павел" -> "Уважаемый Павел, примите вашу зарплату в ${Consts.PAVEL_SALARY} рублей!"
+                "владимир" -> "Уважаемый Владимир, примите вашу зарплату в ${Consts.VLADIMIR_SALARY} рублей!"
+                "александр" -> "Уважаемый Александр, примите вашу зарплату в ${Consts.ALEX_SALARY} рублей!"
+                "валерий" -> "Уважаемый Валерий, примите вашу зарплату в ${Consts.VALERY_SALARY} рублей!"
                 else -> "Имя не зарегистрировано!"
             }
+            bindingClass.tvResult.text = sal
             Log.d("AppLog","Button pushed! Имя: $name")
         }
 
