@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -29,16 +28,10 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button button;
 
   @NonNull
-  public final EditText edCode;
+  public final Button button2;
 
   @NonNull
-  public final EditText edValue;
-
-  @NonNull
-  public final TextView textView;
-
-  @NonNull
-  public final TextView tvResult;
+  public final Button button3;
 
   @NonNull
   public final TextView tvText;
@@ -47,16 +40,13 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView userIcon;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout bRes,
-      @NonNull Button button, @NonNull EditText edCode, @NonNull EditText edValue,
-      @NonNull TextView textView, @NonNull TextView tvResult, @NonNull TextView tvText,
-      @NonNull ImageView userIcon) {
+      @NonNull Button button, @NonNull Button button2, @NonNull Button button3,
+      @NonNull TextView tvText, @NonNull ImageView userIcon) {
     this.rootView = rootView;
     this.bRes = bRes;
     this.button = button;
-    this.edCode = edCode;
-    this.edValue = edValue;
-    this.textView = textView;
-    this.tvResult = tvResult;
+    this.button2 = button2;
+    this.button3 = button3;
     this.tvText = tvText;
     this.userIcon = userIcon;
   }
@@ -96,27 +86,15 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.edCode;
-      EditText edCode = ViewBindings.findChildViewById(rootView, id);
-      if (edCode == null) {
+      id = R.id.button2;
+      Button button2 = ViewBindings.findChildViewById(rootView, id);
+      if (button2 == null) {
         break missingId;
       }
 
-      id = R.id.edValue;
-      EditText edValue = ViewBindings.findChildViewById(rootView, id);
-      if (edValue == null) {
-        break missingId;
-      }
-
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
-        break missingId;
-      }
-
-      id = R.id.tvResult;
-      TextView tvResult = ViewBindings.findChildViewById(rootView, id);
-      if (tvResult == null) {
+      id = R.id.button3;
+      Button button3 = ViewBindings.findChildViewById(rootView, id);
+      if (button3 == null) {
         break missingId;
       }
 
@@ -132,8 +110,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bRes, button, edCode, edValue,
-          textView, tvResult, tvText, userIcon);
+      return new ActivityMainBinding((ConstraintLayout) rootView, bRes, button, button2, button3,
+          tvText, userIcon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

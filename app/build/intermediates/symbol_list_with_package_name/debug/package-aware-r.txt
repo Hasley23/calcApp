@@ -2743,6 +2743,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id button
+id button2
+id button3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2815,8 +2817,6 @@ id easeIn
 id easeInOut
 id easeOut
 id east
-id edCode
-id edValue
 id edit_query
 id elastic
 id embed
@@ -3075,7 +3075,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3101,7 +3100,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvResult
 id tvText
 id unchecked
 id uniform

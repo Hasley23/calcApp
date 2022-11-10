@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">calcApp</string>
     <string name="def_value">123</string>
+    <string name="tvText">User 123 123</string>
+    <string name="button">button</string>
+    <string name="button2">button</string>
+    <string name="button3">button</string>
+
 </resources>

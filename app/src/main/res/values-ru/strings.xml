@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">калькАпп</string>
     <string name="def_value">321</string>
+    <string name="tvText">Пользователь</string>
+    <string name="button">кнопка</string>
+    <string name="button2">кнопка</string>
+    <string name="button3">кнопка</string>
 </resources>

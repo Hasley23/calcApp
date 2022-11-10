@@ -15,10 +15,8 @@ drawable seb
 drawable unknown
 id bRes
 id button
-id edCode
-id edValue
-id textView
-id tvResult
+id button2
+id button3
 id tvText
 id userIcon
 layout activity_main

@@ -26,54 +26,6 @@ class MainActivity : AppCompatActivity() {
         // Выключаем темную тему
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        // Только числа
-        bindingClass.edValue.inputType = InputType.TYPE_CLASS_TEXT
-        bindingClass.edCode.inputType = InputType.TYPE_CLASS_NUMBER
-
-        // Button listener
-        bindingClass.button.setOnClickListener{
-            if (bindingClass.edValue.text.toString() == String()) {
-                return@setOnClickListener
-            }
-            bindingClass.tvResult.visibility = TextView.VISIBLE
-            val name = bindingClass.edValue.text.toString()
-            Log.d("AppLog", "name = $name")
-            val code = bindingClass.edCode.text.toString()
-
-            val nameLower = name.lowercase(Locale.ROOT)
-
-            val sal : String
-            when(nameLower) {
-                "" -> {
-                    sal = "Введите имя!"
-                }
-                Consts.WORKER -> {
-                    if (code == Consts.WORKER_PASS){
-                        bindingClass.userIcon.setImageResource(R.drawable.jack)
-                        sal = "Уважаемый ${name}, примите ваши ${Consts.WORKER_SALARY} условных единиц."
-                    } else sal = "Пароль введен неверно!"
-                }
-                Consts.DIRECTOR -> {
-                    if(code == Consts.DIRECTOR_PASS) {
-                        bindingClass.userIcon.setImageResource(R.drawable.seb)
-                        sal = "Уважаемый ${name}, примите ваши ${Consts.DIRECTOR_SALARY} условных единиц."
-                    } else sal = "Пароль введен неверно!"
-                }
-                Consts.ENGINEER -> {
-                    if(code == Consts.ENGINEER_PASS) {
-                        bindingClass.userIcon.setImageResource(R.drawable.petr)
-                        sal = "Уважаемый ${name}, примите ваши ${Consts.ENGINEER_SALARY} условных единиц."
-                    } else sal = "Пароль введен неверно!"
-                }
-                else -> {
-                    bindingClass.userIcon.setImageResource(R.drawable.unknown)
-                    sal = "Имя не распознано!"
-                }
-            }
-            bindingClass.tvResult.text = sal
-            Log.d("AppLog","Button pushed! Имя: $name")
-        }
-
     }
 
     fun rand(min : Int, max : Int): Int {
